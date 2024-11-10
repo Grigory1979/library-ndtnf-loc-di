@@ -1,0 +1,16 @@
+<%- include('./port/start', {title: title}) %>
+<%- include('./port/menu') %>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <% if (!user) { %>
+            <h1 class="display-4"><%= title %></h1>
+            <p>Пожалуйста, <a href="/user/login"> авторизуйтесь </a></p>
+        <% } else { %>
+            <h1 class="display-4">Привет, <%= user.displayName %></h1>
+            <p>Перейти в <a href="/user/profile">профиль</a>.</p>
+        <% } %>
+    </div>
+</div>
+
+<%- include('./port/end') %>
